@@ -32,9 +32,10 @@
         nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 15px; }
         nav a { text-decoration: none; color: #e0d5cf; font-weight: 500; font-size: 0.9rem; }
 
-        /* HERO */
+        /* HERO - BANNER PRINCIPAL */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80');
+            /* 🔴 ALTERE AQUI O BANNER DO GITHUB (ou caminho relativo 'banner.jpg') */
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://github.com/batistaarthur/serena-chic/blob/main/logo6.jpg?raw=true');
             background-size: cover; background-position: center; height: 180px; color: white; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
             padding: 0 15px;
@@ -126,11 +127,12 @@
 <h2 class="section-title" id="vestidos">Vestidos Elegant</h2>
 <div class="vitrine">
     
-    <!-- VESTIDO MIDD LINHO -->
+    <!-- VESTIDO MIDI LINHO -->
     <div class="produto-card" id="vestido_linho">
         <div class="carrossel-container">
             <button class="nav-btn prev" onclick="moveSlide('vestido_linho', -1)"><span class="material-icons">chevron_left</span></button>
             <div class="carrossel-wrapper">
+                <!-- 🔴 ALTERE AS FOTOS DESTE PRODUTO ABAIXO -->
                 <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80">
                 <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=800&q=80">
             </div>
@@ -151,6 +153,7 @@
         <div class="carrossel-container">
             <button class="nav-btn prev" onclick="moveSlide('vestido_longo', -1)"><span class="material-icons">chevron_left</span></button>
             <div class="carrossel-wrapper">
+                <!-- 🔴 ALTERE AS FOTOS DESTE PRODUTO ABAIXO -->
                 <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80">
                 <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80">
             </div>
@@ -170,6 +173,7 @@
         <div class="carrossel-container">
             <button class="nav-btn prev" onclick="moveSlide('vestido_alfaiataria', -1)"><span class="material-icons">chevron_left</span></button>
             <div class="carrossel-wrapper">
+                <!-- 🔴 ALTERE A FOTO DESTE PRODUTO ABAIXO -->
                 <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80">
             </div>
             <button class="nav-btn next" onclick="moveSlide('vestido_alfaiataria', 1)"><span class="material-icons">chevron_right</span></button>
@@ -192,6 +196,7 @@
         <div class="carrossel-container">
             <button class="nav-btn prev" onclick="moveSlide('conjunto_alfaiataria', -1)"><span class="material-icons">chevron_left</span></button>
             <div class="carrossel-wrapper">
+                <!-- 🔴 ALTERE A FOTO DESTE PRODUTO ABAIXO -->
                 <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=800&q=80">
             </div>
             <button class="nav-btn next" onclick="moveSlide('conjunto_alfaiataria', 1)"><span class="material-icons">chevron_right</span></button>
@@ -210,6 +215,7 @@
         <div class="carrossel-container">
             <button class="nav-btn prev" onclick="moveSlide('camisa_seda', -1)"><span class="material-icons">chevron_left</span></button>
             <div class="carrossel-wrapper">
+                <!-- 🔴 ALTERE A FOTO DESTE PRODUTO ABAIXO -->
                 <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80">
             </div>
             <button class="nav-btn next" onclick="moveSlide('camisa_seda', 1)"><span class="material-icons">chevron_right</span></button>
@@ -279,7 +285,7 @@
 </div>
 
 <script>
-  // Configuração de quantidade de fotos por produto no carrossel
+  // 🔴 IMPORTANTE: Se adicionar ou remover fotos dos produtos, atualize a contagem 'total' abaixo:
   const config = {
     'vestido_linho': { current: 0, total: 2 },
     'vestido_longo': { current: 0, total: 2 },
@@ -326,7 +332,6 @@
     dots.forEach((d, i) => d.classList.toggle('active', i === c.current));
   }
 
-  // Preços dos produtos
   const precos = {
     "Vestido Midi Linho Pure": "249,00",
     "Vestido Longo Fluido Floral": "299,00",
@@ -335,7 +340,6 @@
     "Camisa Acetinada Chic": "139,90"
   };
 
-  // ÁREA ONDE VOCÊ IRÁ COLOCAR SEUS LINKS DE CARTÃO
   const linksCartao = {
     "Vestido Midi Linho Pure": "SEU_LINK_AQUI",
     "Vestido Longo Fluido Floral": "SEU_LINK_AQUI",
@@ -344,7 +348,6 @@
     "Camisa Acetinada Chic": "SEU_LINK_AQUI"
   };
 
-  // ÁREA ONDE VOCÊ IRÁ COLOCAR SUAS CHAVES/CÓDIGOS PIX
   const linksPix = {
     "Vestido Midi Linho Pure": "SEU_CODIGO_PIX_AQUI",
     "Vestido Longo Fluido Floral": "SEU_CODIGO_PIX_AQUI",
@@ -407,7 +410,6 @@
     const metodoAtivo = document.getElementById('metodo_pagamento').value;
     const metodoTexto = metodoAtivo === "pix" ? "PIX" : "Cartão de crédito";
     
-    // Insira seu número de WhatsApp com DDD abaixo (substitua o 5527992985369 se necessário)
     const whatsappNumero = "5527992985369"; 
     
     const mensagem = `Olá Serena & Chic!%0A%0A*Comprovante de pagamento*%0AProduto: ${produtoAtivo}%0ATamanho: ${tamanho}%0AValor: R$ ${valor}%0AMétodo: ${metodoTexto}%0A%0AEstou enviando o comprovante em anexo.`;
