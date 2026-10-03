@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Serena & Chic - Boutique Feminina</title>
+    <title>SERENA & CHIC - Checkout Profissional</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c221e;
-            --accent-color: #c59b27;
+            --primary-color: #1a1a1a;
+            --accent-color: #27ae60;
             --whatsapp-color: #25D366;
-            --background-body: #faf7f5;
-            --text-main: #4a3f3a;
-            --card-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            --background-body: #f4f7f6;
+            --text-main: #333;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
         * { box-sizing: border-box; }
@@ -26,25 +26,22 @@
         header { 
             background-color: var(--primary-color); color: white; padding: 1rem; 
             display: flex; flex-direction: column; align-items: center;
-            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
-        header h1 { margin: 0 0 10px 0; font-size: 1.4rem; letter-spacing: 2px; font-weight: 600; }
+        header h1 { margin: 0 0 10px 0; font-size: 1.3rem; letter-spacing: 1px; }
         nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 15px; }
-        nav a { text-decoration: none; color: #e0d5cf; font-weight: 500; font-size: 0.9rem; }
+        nav a { text-decoration: none; color: #ccc; font-weight: 500; font-size: 0.9rem; }
 
-        /* HERO - BANNER PRINCIPAL */
+        /* HERO */
         .hero {
-            /* 🔴 ALTERE AQUI O BANNER DO GITHUB (ou caminho relativo 'banner.jpg') */
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://github.com/batistaarthur/serena-chic/blob/main/logo6.jpg?raw=true');
-            background-size: cover; background-position: center; height: 420px; color: white; 
+            /* 🔴 BANNER PRINCIPAL (ALTERE A URL DA IMAGEM ABAIXO) */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('COLE_AQUI_A_URL_DO_BANNER.jpg');
+            background-size: cover; background-position: center; height: 160px; color: white; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            padding: 0 15px;
         }
-        .hero h2 { margin: 0 0 5px 0; font-weight: 400; font-size: 1.6rem; }
-        .hero p { margin: 0; font-size: 0.95rem; opacity: 0.9; }
 
         /* VITRINE */
-        .section-title { text-align: center; margin: 35px 0 15px; font-size: 1.5rem; color: var(--primary-color); font-weight: 600; }
+        .section-title { text-align: center; margin: 30px 0 15px; font-size: 1.5rem; color: #1a1a1a; }
         .vitrine { display: grid; grid-template-columns: 1fr; padding: 15px; gap: 20px; max-width: 1200px; margin: 0 auto; }
 
         /* CARROSSEL PROFISSIONAL */
@@ -54,13 +51,13 @@
         }
         .carrossel-container { position: relative; width: 100%; overflow: hidden; border-radius: 10px; }
         .carrossel-wrapper { display: flex; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); width: 100%; }
-        .carrossel-wrapper img { width: 100%; flex-shrink: 0; height: 320px; object-fit: cover; cursor: pointer; border-radius: 8px; }
+        .carrossel-wrapper img { width: 100%; flex-shrink: 0; height: 250px; object-fit: contain; cursor: pointer; padding: 10px; }
 
         .nav-btn {
             position: absolute; top: 50%; transform: translateY(-50%);
-            background: rgba(255,255,255,0.85); color: #333; border: none; border-radius: 50%;
+            background: rgba(255,255,255,0.8); color: #333; border: none; border-radius: 50%;
             width: 35px; height: 35px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .prev { left: 5px; } .next { right: 5px; }
 
@@ -69,16 +66,15 @@
         .dot.active { background: var(--accent-color); width: 15px; border-radius: 4px; }
 
         /* PREÇOS */
-        .preco { color: var(--primary-color); font-size: 1.5rem; font-weight: bold; margin: 5px 0; }
-        .preco-off { color: var(--accent-color); font-size: 0.9rem; font-weight: 600; margin-bottom: 5px; }
-        .parcelas-info { color: #777; font-size: 0.85rem; margin-bottom: 15px; background: #fdfaf7; padding: 6px; border-radius: 5px; }
+        .preco { color: var(--accent-color); font-size: 1.6rem; font-weight: bold; margin: 5px 0; }
+        .parcelas-info { color: #666; font-size: 0.85rem; margin-bottom: 15px; background: #f9f9f9; padding: 5px; border-radius: 5px; }
         
         .btn-comprar { 
             display: flex; align-items: center; justify-content: center; gap: 8px;
-            background-color: var(--primary-color); color: white; padding: 14px; text-decoration: none; 
+            background-color: #007bff; color: white; padding: 14px; text-decoration: none; 
             border-radius: 10px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s;
         }
-        .btn-comprar:hover { background-color: #42332c; }
+        .btn-comprar:hover { background-color: #0056b3; }
 
         /* MODAL CHECKOUT */
         .modal-checkout { 
@@ -90,12 +86,12 @@
             background: white; padding: 25px; border-radius: 20px; 
             width: 95%; max-width: 450px; margin: 40px auto; 
         }
-        .form-container h2 { margin-top: 0; font-size: 1.2rem; border-bottom: 2px solid var(--primary-color); padding-bottom: 10px; color: var(--primary-color); }
+        .form-container h2 { margin-top: 0; font-size: 1.2rem; border-bottom: 2px solid #007bff; padding-bottom: 10px; color: #1a1a1a; }
         
         .form-group { margin-bottom: 15px; text-align: left; }
         .form-group label { display: block; font-size: 0.75rem; font-weight: bold; margin-bottom: 5px; text-transform: uppercase; color: #777; }
         .form-group input, .form-group select { width: 100%; padding: 12px; border: 1.5px solid #eee; border-radius: 10px; font-size: 1rem; outline: none; transition: 0.3s; }
-        .form-group input:focus { border-color: var(--primary-color); }
+        .form-group input:focus { border-color: #007bff; }
 
         /* MODAL ZOOM IMAGEM */
         #modalImagem {
@@ -113,119 +109,134 @@
     <nav>
         <ul>
             <li><a href="#home">Início</a></li>
-            <li><a href="#vestidos">Vestidos</a></li>
-            <li><a href="#conjuntos">Conjuntos & Blusas</a></li>
+            <li><a href="#smartphones">Smartphones</a></li>
+            <li><a href="#acessorios">Acessórios</a></li>
         </ul>
     </nav>
 </header>
 
 <section class="hero" id="home">
-    <h2>Coleção Primavera / Verão</h2>
-    <p>Parcelamento em até 6x sem juros ou desconto no PIX</p>
+    <h2>Smartphones & Acessórios</h2>
+    <p>Parcelamento em até 12x nos cartões de crédito</p>
 </section>
 
-<h2 class="section-title" id="vestidos">Vestidos Elegant</h2>
+<h2 class="section-title" id="smartphones">Dispositivos Apple</h2>
 <div class="vitrine">
     
-    <!-- VESTIDO MIDI LINHO -->
-    <div class="produto-card" id="Blusa_Feminina">
+    <!-- iPhone 17 PRO MAX 256GB-->
+    <div class="produto-card" id="iphone17promax">
         <div class="carrossel-container">
-            <button class="nav-btn prev" onclick="moveSlide('Blusa_Feminina', -1)"><span class="material-icons">chevron_left</span></button>
+            <button class="nav-btn prev" onclick="moveSlide('iphone17promax', -1)"><span class="material-icons">chevron_left</span></button>
             <div class="carrossel-wrapper">
-                <!-- 🔴 ALTERE AS FOTOS DESTE PRODUTO ABAIXO -->
-                <img src="bl1.png">
-                <img src="bl2.png">
+                <!-- 🔴 INSERIR IMAGENS DO IPHONE 17 PRO MAX ABAIXO -->
+                <img src="SUA_IMAGEM_AQUI.jpg">
             </div>
-            <button class="nav-btn next" onclick="moveSlide('Blusa_Feminina', 1)"><span class="material-icons">chevron_right</span></button>
+            <button class="nav-btn next" onclick="moveSlide('iphone17promax', 1)"><span class="material-icons">chevron_right</span></button>
         </div>
-        <div class="dots-container" id="dots-Blusa_Feminina></div>
-        <h3>Vestido Midi Linho Pure</h3>
-        <p class="preco-off">R$ 236,55 (5% off no PIX)</p>
-        <p class="preco">R$ 249,00</p>
-        <div class="parcelas-info">Até 6x no cartão de crédito</div>
-        <button class="btn-comprar" onclick="abrirCheckout('Blusa Feminina')">
-            <span class="material-icons">shopping_bag</span> COMPRAR AGORA
+        <div class="dots-container" id="dots-iphone17promax"></div>
+        <h3>iPhone 17 Pro Max 256GB</h3>
+        <p class="preco">R$ 10.069,00 (5% off no PIX)</p>
+        <p class="preco">R$ 10.599,00</p>
+        <div class="parcelas-info">Até 12x no cartão de crédito</div>
+        <button class="btn-comprar" onclick="abrirCheckout('iPhone 17 Pro Max 256GB')">
+            <span class="material-icons">shopping_cart</span> COMPRAR AGORA
         </button>
     </div>
 
-    <!-- VESTIDO LONGO SEDA -->
-    <div class="produto-card" id="vestido_longo">
+    <!-- iPHONE 17 PRO -->
+    <div class="produto-card" id="iphone17pro">
         <div class="carrossel-container">
-            <button class="nav-btn prev" onclick="moveSlide('vestido_longo', -1)"><span class="material-icons">chevron_left</span></button>
+            <button class="nav-btn prev" onclick="moveSlide('iphone17pro', -1)"><span class="material-icons">chevron_left</span></button>
             <div class="carrossel-wrapper">
-                <!-- 🔴 ALTERE AS FOTOS DESTE PRODUTO ABAIXO -->
-                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80">
-                <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80">
+                <!-- 🔴 INSERIR IMAGENS DO IPHONE 17 PRO ABAIXO -->
+                <img src="SUA_IMAGEM_AQUI.jpg">
             </div>
-            <button class="nav-btn next" onclick="moveSlide('vestido_longo', 1)"><span class="material-icons">chevron_right</span></button>
+            <button class="nav-btn next" onclick="moveSlide('iphone17pro', 1)"><span class="material-icons">chevron_right</span></button>
         </div>
-        <div class="dots-container" id="dots-vestido_longo"></div>
-        <h3>Vestido Longo Fluido Floral</h3>
-        <p class="preco">R$ 299,00</p>
-        <div class="parcelas-info">Até 6x no cartão de crédito</div>
-        <button class="btn-comprar" onclick="abrirCheckout('Vestido Longo Fluido Floral')">
-            <span class="material-icons">shopping_bag</span> COMPRAR AGORA
+        <div class="dots-container" id="dots-iphone17pro"></div>
+        <h3>iPhone 17 Pro 256GB</h3>
+        <p class="preco">R$ 7.899,00</p>
+        <div class="parcelas-info">Até 12x no cartão de crédito</div>
+        <button class="btn-comprar" onclick="abrirCheckout('iPhone 17 Pro 256GB')">
+            <span class="material-icons">shopping_cart</span> COMPRAR AGORA
         </button>
     </div>
 
-    <!-- VESTIDO CURTO ALFAIATARIA -->
-    <div class="produto-card" id="vestido_alfaiataria">
+    <!-- iPHONE 17 -->
+    <div class="produto-card" id="iphone17">
         <div class="carrossel-container">
-            <button class="nav-btn prev" onclick="moveSlide('vestido_alfaiataria', -1)"><span class="material-icons">chevron_left</span></button>
+            <button class="nav-btn prev" onclick="moveSlide('iphone17', -1)"><span class="material-icons">chevron_left</span></button>
             <div class="carrossel-wrapper">
-                <!-- 🔴 ALTERE A FOTO DESTE PRODUTO ABAIXO -->
-                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80">
+                <!-- 🔴 INSERIR IMAGENS DO IPHONE 17 ABAIXO -->
+                <img src="SUA_IMAGEM_AQUI.jpg">
             </div>
-            <button class="nav-btn next" onclick="moveSlide('vestido_alfaiataria', 1)"><span class="material-icons">chevron_right</span></button>
+            <button class="nav-btn next" onclick="moveSlide('iphone17', 1)"><span class="material-icons">chevron_right</span></button>
         </div>
-        <div class="dots-container" id="dots-vestido_alfaiataria"></div>
-        <h3>Vestido Curto Alfaiataria</h3>
-        <p class="preco">R$ 189,90</p>
-        <div class="parcelas-info">Até 6x no cartão de crédito</div>
-        <button class="btn-comprar" onclick="abrirCheckout('Vestido Curto Alfaiataria')">
-            <span class="material-icons">shopping_bag</span> COMPRAR AGORA
+        <div class="dots-container" id="dots-iphone17"></div>
+        <h3>iPhone 17 256GB</h3>
+        <p class="preco">R$ 6.399,00</p>
+        <div class="parcelas-info">Até 12x no cartão de crédito</div>
+        <button class="btn-comprar" onclick="abrirCheckout('iPhone 17 256GB')">
+            <span class="material-icons">shopping_cart</span> COMPRAR AGORA
+        </button>
+    </div>
+
+    <!-- iPHONE 16 -->
+    <div class="produto-card" id="iphone16">
+        <div class="carrossel-container">
+            <button class="nav-btn prev" onclick="moveSlide('iphone16', -1)"><span class="material-icons">chevron_left</span></button>
+            <div class="carrossel-wrapper">
+                <!-- 🔴 INSERIR IMAGENS DO IPHONE 16 ABAIXO -->
+                <img src="SUA_IMAGEM_AQUI.jpg">
+            </div>
+            <button class="nav-btn next" onclick="moveSlide('iphone16', 1)"><span class="material-icons">chevron_right</span></button>
+        </div>
+        <div class="dots-container" id="dots-iphone16"></div>
+        <h3>iPhone 16 256GB</h3>
+        <p class="preco">R$ 5.799,00</p>
+        <div class="parcelas-info">Até 12x no cartão de crédito</div>
+        <button class="btn-comprar" onclick="abrirCheckout('iPhone 16 256GB')">
+            <span class="material-icons">shopping_cart</span> COMPRAR AGORA
         </button>
     </div>
 </div>
 
-<h2 class="section-title" id="conjuntos">Conjuntos & Blusas</h2>
+<h2 class="section-title" id="acessorios">Acessórios</h2>
 <div class="vitrine">
 
-    <!-- CONJUNTO ALFAIATARIA -->
-    <div class="produto-card" id="conjunto_alfaiataria">
+    <div class="produto-card" id="capa">
         <div class="carrossel-container">
-            <button class="nav-btn prev" onclick="moveSlide('conjunto_alfaiataria', -1)"><span class="material-icons">chevron_left</span></button>
+            <button class="nav-btn prev" onclick="moveSlide('capa', -1)"><span class="material-icons">chevron_left</span></button>
             <div class="carrossel-wrapper">
-                <!-- 🔴 ALTERE A FOTO DESTE PRODUTO ABAIXO -->
-                <img src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=800&q=80">
+                <!-- 🔴 INSERIR IMAGENS DA CAPA ABAIXO -->
+                <img src="SUA_IMAGEM_AQUI.jpg">
             </div>
-            <button class="nav-btn next" onclick="moveSlide('conjunto_alfaiataria', 1)"><span class="material-icons">chevron_right</span></button>
+            <button class="nav-btn next" onclick="moveSlide('capa', 1)"><span class="material-icons">chevron_right</span></button>
         </div>
-        <div class="dots-container" id="dots-conjunto_alfaiataria"></div>
-        <h3>Conjunto Blazer e Pantalona</h3>
-        <p class="preco">R$ 349,90</p>
-        <div class="parcelas-info">Até 6x no cartão de crédito</div>
-        <button class="btn-comprar" onclick="abrirCheckout('Conjunto Blazer e Pantalona')">
-            <span class="material-icons">shopping_bag</span> COMPRAR AGORA
+        <div class="dots-container" id="dots-capa"></div>
+        <h3>Capa MagSafe Premium</h3>
+        <p class="preco">R$ 105,90</p>
+        <div class="parcelas-info">Até 12x no cartão</div>
+        <button class="btn-comprar" onclick="abrirCheckout('Capa MagSafe Premium')">
+            <span class="material-icons">shopping_cart</span> COMPRAR AGORA
         </button>
     </div>
 
-    <!-- CAMISA SEDA -->
-    <div class="produto-card" id="camisa_seda">
+    <div class="produto-card" id="carregador">
         <div class="carrossel-container">
-            <button class="nav-btn prev" onclick="moveSlide('camisa_seda', -1)"><span class="material-icons">chevron_left</span></button>
+            <button class="nav-btn prev" onclick="moveSlide('carregador', -1)"><span class="material-icons">chevron_left</span></button>
             <div class="carrossel-wrapper">
-                <!-- 🔴 ALTERE A FOTO DESTE PRODUTO ABAIXO -->
-                <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80">
+                <!-- 🔴 INSERIR IMAGENS DO CARREGADOR ABAIXO -->
+                <img src="SUA_IMAGEM_AQUI.jpg">
             </div>
-            <button class="nav-btn next" onclick="moveSlide('camisa_seda', 1)"><span class="material-icons">chevron_right</span></button>
+            <button class="nav-btn next" onclick="moveSlide('carregador', 1)"><span class="material-icons">chevron_right</span></button>
         </div>
-        <div class="dots-container" id="dots-camisa_seda"></div>
-        <h3>Camisa Acetinada Chic</h3>
-        <p class="preco">R$ 139,90</p>
-        <div class="parcelas-info">Até 6x no cartão de crédito</div>
-        <button class="btn-comprar" onclick="abrirCheckout('Camisa Acetinada Chic')">
-            <span class="material-icons">shopping_bag</span> COMPRAR AGORA
+        <div class="dots-container" id="dots-carregador"></div>
+        <h3>Carregador aGold</h3>
+        <p class="preco">R$ 99,90</p>
+        <div class="parcelas-info">Até 12x no cartão</div>
+        <button class="btn-comprar" onclick="abrirCheckout('Carregador aGold')">
+            <span class="material-icons">shopping_cart</span> COMPRAR AGORA
         </button>
     </div>
 </div>
@@ -233,7 +244,13 @@
 <!-- MODAL PARA AMPLIAR IMAGEM -->
 <div id="modalImagem" class="modal-checkout" onclick="fecharImagem()">
     <span style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;">&times;</span>
-    <img id="imgZoom" src="" style="max-width:90%; max-height:80%; border-radius:10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+    <button class="nav-btn prev" onclick="mudarImagemZoom(-1, event)" style="left: 20px; z-index: 3010; width: 45px; height: 45px;">
+        <span class="material-icons">chevron_left</span>
+    </button>
+    <img id="imgZoom" src="" style="max-width:90%; max-height:80%; border-radius:10px; box-shadow: 0 0 20px rgba(0,0,0,0.5);" onclick="event.stopPropagation()">
+    <button class="nav-btn next" onclick="mudarImagemZoom(1, event)" style="right: 20px; z-index: 3010; width: 45px; height: 45px;">
+        <span class="material-icons">chevron_right</span>
+    </button>
 </div>
 
 <!-- MODAL CHECKOUT COMPLETO COM QR CODE PIX -->
@@ -244,22 +261,13 @@
 
     <div id="area-escolha-pagamento">
       <div class="form-group">
-        <label>Tamanho</label>
-        <select id="tamanho_produto">
-          <option value="P">P (36-38)</option>
-          <option value="M">M (40-42)</option>
-          <option value="G">G (44)</option>
-        </select>
-      </div>
-
-      <div class="form-group">
         <label>Método de pagamento</label>
         <select id="metodo_pagamento">
-          <option value="cartao">Cartão de crédito (até 6x)</option>
+          <option value="cartao">Cartão de crédito (até 12x, com taxas)</option>
           <option value="pix">Pix</option>
         </select>
       </div>
-      <button onclick="processarPagamento()" style="width:100%; padding:12px; border:none; border-radius:10px; background:var(--primary-color); color:#fff; font-weight:bold; cursor:pointer;">
+      <button onclick="processarPagamento()" style="width:100%; padding:12px; border:none; border-radius:10px; background:#007bff; color:#fff; font-weight:bold; cursor:pointer;">
         Gerar Pagamento
       </button>
     </div>
@@ -285,43 +293,65 @@
 </div>
 
 <script>
-  // 🔴 IMPORTANTE: Se adicionar ou remover fotos dos produtos, atualize a contagem 'total' abaixo:
+  // 🔴 AJUSTE O TOTAL DE FOTOS DE CADA PRODUTO CONFORME A QUANTIDADE DE <img> QUE INSERIR
   const config = {
-    'vestido_linho': { current: 0, total: 2 },
-    'vestido_longo': { current: 0, total: 2 },
-    'vestido_alfaiataria': { current: 0, total: 1 },
-    'conjunto_alfaiataria': { current: 0, total: 1 },
-    'camisa_seda': { current: 0, total: 1 },
+    'iphone17promax': { current: 0, total: 1 },
+    'iphone17pro': { current: 0, total: 1 },
+    'iphone17': { current: 0, total: 1 },
+    'iphone16': { current: 0, total: 1 },
+    'capa': { current: 0, total: 1 },
+    'carregador': { current: 0, total: 1 },
   };
+
+  let produtoZoomAtivo = "";
+  let indexZoomAtivo = 0;
 
   function initCarrossel() {
     for (let id in config) {
       const dots = document.getElementById(`dots-${id}`);
-      if (dots) {
-        dots.innerHTML = "";
-        for (let i = 0; i < config[id].total; i++) {
-          const dot = document.createElement('div');
-          dot.className = `dot ${i === 0 ? 'active' : ''}`;
-          dots.appendChild(dot);
-        }
+      dots.innerHTML = "";
+      for (let i = 0; i < config[id].total; i++) {
+        const dot = document.createElement('div');
+        dot.className = `dot ${i === 0 ? 'active' : ''}`;
+        dots.appendChild(dot);
       }
       
       const imagens = document.querySelectorAll(`#${id} .carrossel-wrapper img`);
-      imagens.forEach(img => {
-          img.onclick = function() { abrirImagem(this.src); };
+      imagens.forEach((img, index) => {
+          img.onclick = function() { abrirImagem(id, index); };
       });
     }
   }
 
-  function abrirImagem(src) {
+  function abrirImagem(id, index) {
+      produtoZoomAtivo = id;
+      indexZoomAtivo = index;
       const modal = document.getElementById('modalImagem');
       const img = document.getElementById('imgZoom');
       modal.style.display = 'flex';
-      img.src = src;
+      
+      const listaImagens = document.querySelectorAll(`#${id} .carrossel-wrapper img`);
+      img.src = listaImagens[index].src;
   }
 
   function fecharImagem() {
       document.getElementById('modalImagem').style.display = 'none';
+  }
+
+  function mudarImagemZoom(step, event) {
+      if (event) event.stopPropagation();
+      
+      const c = config[produtoZoomAtivo];
+      indexZoomAtivo = (indexZoomAtivo + step + c.total) % c.total;
+      
+      const listaImagens = document.querySelectorAll(`#${produtoZoomAtivo} .carrossel-wrapper img`);
+      const img = document.getElementById('imgZoom');
+      img.src = listaImagens[indexZoomAtivo].src;
+      
+      c.current = indexZoomAtivo;
+      document.querySelector(`#${produtoZoomAtivo} .carrossel-wrapper`).style.transform = `translateX(-${c.current * 100}%)`;
+      const dots = document.querySelectorAll(`#dots-${produtoZoomAtivo} .dot`);
+      dots.forEach((d, i) => d.classList.toggle('active', i === c.current));
   }
 
   function moveSlide(id, step) {
@@ -333,27 +363,30 @@
   }
 
   const precos = {
-    "Vestido Midi Linho Pure": "249,00",
-    "Vestido Longo Fluido Floral": "299,00",
-    "Vestido Curto Alfaiataria": "189,90",
-    "Conjunto Blazer e Pantalona": "349,90",
-    "Camisa Acetinada Chic": "139,90"
+    "iPhone 17 Pro Max 256GB": "10.599,00",
+    "iPhone 17 Pro 256GB": "7.899,00",
+    "iPhone 17 256GB":     "6.399,00",
+    "iPhone 16 256GB":     "5.799,00",
+    "Capa MagSafe Premium":"105,90",
+    "Carregador aGold": "99,90"
   };
 
   const linksCartao = {
-    "Vestido Midi Linho Pure": "SEU_LINK_AQUI",
-    "Vestido Longo Fluido Floral": "SEU_LINK_AQUI",
-    "Vestido Curto Alfaiataria": "SEU_LINK_AQUI",
-    "Conjunto Blazer e Pantalona": "SEU_LINK_AQUI",
-    "Camisa Acetinada Chic": "SEU_LINK_AQUI"
+    "iPhone 17 Pro 256GB": "https://link.infinitepay.io/batista-arthur-80l/VC1D-koFiQwTsGK-7899,00",
+    "iPhone 17 Pro Max 256GB": "https://link.infinitepay.io/batista-arthur-80l/VC1D-FYnaNZA4dr-10599,00",
+    "iPhone 17 256GB":     "https://link.infinitepay.io/batista-arthur-80l/VC1D-KcX8AqZdq3-6399,00",
+    "iPhone 16 256GB":     "https://link.infinitepay.io/batista-arthur-80l/VC1D-k1NSgpRWOB-5799,00",
+    "Capa MagSafe Premium":"https://link.infinitepay.io/batista-arthur-80l/VC1D-eGIbRECYtQ-105,90",
+    "Carregador aGold": "https://link.infinitepay.io/batista-arthur-80l/VC1D-e9gaXtShD3-99,90"
   };
 
   const linksPix = {
-    "Vestido Midi Linho Pure": "SEU_CODIGO_PIX_AQUI",
-    "Vestido Longo Fluido Floral": "SEU_CODIGO_PIX_AQUI",
-    "Vestido Curto Alfaiataria": "SEU_CODIGO_PIX_AQUI",
-    "Conjunto Blazer e Pantalona": "SEU_CODIGO_PIX_AQUI",
-    "Camisa Acetinada Chic": "SEU_CODIGO_PIX_AQUI"
+    "iPhone 17 Pro 256GB": "00020101021226840014BR.GOV.BCB.PIX013683e7ba8c-a1b4-4542-aa9f-f40b5db288e90222Pagamento batista-arth52040000530398654077899.005802BR5923ARTHUR BATISTA DA SILVA6008LINHARES62290525QRCCULpstJ7FkHOrXbTIKrWbW630424B5",
+    "iPhone 17 256GB": "00020101021226840014BR.GOV.BCB.PIX013683e7ba8c-a1b4-4542-aa9f-f40b5db288e90222Pagamento batista-arth52040000530398654076399.005802BR5923ARTHUR BATISTA DA SILVA6008LINHARES62290525QRCCV7kLh0V1PL4Q9HQpO7GqE6304FEA5",
+    "iPhone 16 256GB": "00020101021226840014BR.GOV.BCB.PIX013683e7ba8c-a1b4-4542-aa9f-f40b5db288e90222Pagamento batista-arth52040000530398654075799.005802BR5923ARTHUR BATISTA DA SILVA6008LINHARES62290525QRCCJrpCrqlbgac5jxmVnRclu63043634",
+    "Capa MagSafe Premium":"00020101021226840014BR.GOV.BCB.PIX013683e7ba8c-a1b4-4542-aa9f-f40b5db288e90222Pagamento batista-arth5204000053039865406105.905802BR5923ARTHUR BATISTA DA SILVA6008LINHARES62290525QRCCCYo6DupObr8QqOOmnuPKG6304CE04",
+    "Carregador aGold":"00020101021226840014BR.GOV.BCB.PIX013683e7ba8c-a1b4-4542-aa9f-f40b5db288e90222Pagamento batista-arth520400005303986540599.905802BR5923ARTHUR BATISTA DA SILVA6008LINHARES62290525QRCCFGfcp0beAmrqJondPXB0Z6304D434",
+    "iPhone 17 Pro Max 256GB": "00020101021226840014BR.GOV.BCB.PIX013683e7ba8c-a1b4-4542-aa9f-f40b5db288e90222Pagamento batista-arth520400005303986540810069.005802BR5923ARTHUR BATISTA DA SILVA6008LINHARES62290525QRCCw4dFZfPztbyf1RHPYfSQ96304244B",
   };
 
   let produtoAtivo = "";
@@ -376,15 +409,15 @@
     const metodoAtivo = document.getElementById('metodo_pagamento').value;
     if (metodoAtivo === "cartao") {
       const link = linksCartao[produtoAtivo];
-      if (!link || link === "SEU_LINK_AQUI") {
-        alert("Link de cartão para este produto ainda não foi fornecido.");
+      if (!link || link.includes("SEU_LINK_CARTAO")) {
+        alert("Link do cartão ainda não configurado.");
         return;
       }
       window.open(link, "_blank");
     } else if (metodoAtivo === "pix") {
       const codigoPix = linksPix[produtoAtivo];
-      if (!codigoPix || codigoPix === "SEU_CODIGO_PIX_AQUI") {
-        alert("Código Pix para este produto ainda não foi configurado.");
+      if (!codigoPix || codigoPix.includes("COLE_AQUI")) {
+        alert("Chave Pix ainda não configurada.");
         return;
       }
       document.getElementById('area-escolha-pagamento').style.display = 'none';
@@ -406,14 +439,10 @@
   function enviarComprovanteWhatsApp() {
     if (!produtoAtivo) return;
     const valor = precos[produtoAtivo] || "";
-    const tamanho = document.getElementById('tamanho_produto').value;
     const metodoAtivo = document.getElementById('metodo_pagamento').value;
     const metodoTexto = metodoAtivo === "pix" ? "PIX" : "Cartão de crédito";
-    
-    const whatsappNumero = "5527992985369"; 
-    
-    const mensagem = `Olá Serena & Chic!%0A%0A*Comprovante de pagamento*%0AProduto: ${produtoAtivo}%0ATamanho: ${tamanho}%0AValor: R$ ${valor}%0AMétodo: ${metodoTexto}%0A%0AEstou enviando o comprovante em anexo.`;
-    window.open(`https://wa.me/${whatsappNumero}?text=${mensagem}`, "_blank");
+    const mensagem = `Olá SERENA & CHIC!%0A%0A*Comprovante de pagamento*%0AProduto: ${produtoAtivo}%0AValor: R$ ${valor}%0AMétodo: ${metodoTexto}%0A%0AEstou enviando o comprovante em anexo.`;
+    window.open(`https://wa.me/5527992985369?text=${mensagem}`, "_blank");
   }
 
   window.onload = initCarrossel;
@@ -421,3 +450,9 @@
 
 </body>
 </html>
+
+
+
+
+
+
