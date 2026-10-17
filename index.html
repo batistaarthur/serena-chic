@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serena & Chic | Boutique</title>
     <style>
-        /* Estilos e Cores baseados na Logo */
+        /* ==========================================
+           1. VARIÁVEIS E CONFIGURAÇÕES GERAIS DE ESTILO
+           ========================================== */
         :root {
             --cor-fundo: #f4f9f8;
             --cor-primaria: #84c5bc; /* Verde água da logo */
-            --cor-texto: #5a4033; /* Marrom/Dourado escuro da logo */
+            --cor-texto: #5a4033;    /* Marrom/Dourado escuro da logo */
             --cor-branca: #ffffff;
         }
 
@@ -21,7 +23,9 @@
             padding: 0;
         }
 
-        /* Banner / Header */
+        /* ==========================================
+           2. BANNER / CABEÇALHO PRINCIPAL
+           ========================================== */
         header {
             text-align: center;
             background-color: var(--cor-primaria);
@@ -51,14 +55,16 @@
             font-size: 2em;
         }
 
-        /* Grid de Vitrines */
+        /* ==========================================
+           3. GRID DE VITRINES (DISPOSIÇÃO DOS PRODUTOS)
+           ========================================== */
         .vitrine-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
-        /* Estilo individual de cada vitrine */
+        /* Cartão individual de cada blusa */
         .vitrine {
             background-color: var(--cor-branca);
             border-radius: 8px;
@@ -76,7 +82,9 @@
             font-weight: 500;
         }
 
-        /* Galeria de Imagens da Vitrine */
+        /* ==========================================
+           4. GALERIA DE IMAGENS HORIZONTAIS
+           ========================================== */
         .galeria-imagens {
             display: flex;
             overflow-x: auto;
@@ -85,7 +93,7 @@
             align-items: center;
         }
 
-        /* Scrollbar suave para a galeria */
+        /* Estilização da barra de rolagem da galeria */
         .galeria-imagens::-webkit-scrollbar {
             height: 6px;
         }
@@ -94,6 +102,7 @@
             border-radius: 4px;
         }
 
+        /* Tamanho padrão das fotos dos produtos */
         .galeria-imagens img {
             width: 200px;
             height: 280px;
@@ -102,29 +111,28 @@
             flex-shrink: 0;
         }
 
-        /* Espaço para adicionar novas imagens */
+        /* ==========================================
+           5. ELEMENTOS DE EDIÇÃO (OCULTOS PARA O PÚBLICO)
+           * Nota: display: none; esconde do cliente final
+           ========================================== */
         .espaco-nova-imagem {
             width: 200px;
             height: 280px;
             background-color: #eef5f4;
             border: 2px dashed var(--cor-primaria);
             border-radius: 4px;
-            display: flex;
+            display: none; /* Oculto para visitantes */
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             color: var(--cor-primaria);
             font-size: 0.9em;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        .espaco-nova-imagem:hover {
-            background-color: var(--cor-primaria);
-            color: var(--cor-branca);
-        }
-
-        /* Botão de Checkout */
+        /* ==========================================
+           6. BOTÃO DE COMPRA / CHECKOUT
+           ========================================== */
         .btn-comprar {
             display: inline-block;
             margin-top: 20px;
@@ -143,28 +151,27 @@
             background-color: #3b2a21;
         }
 
-        /* Espaço para adicionar nova vitrine inteira */
+        /* Bloco de vitrine vazia para futuras adições (Oculto ao público) */
         .vitrine-vazia {
+            display: none; /* Oculto para visitantes */
             background-color: transparent;
             border: 2px dashed var(--cor-texto);
             box-shadow: none;
             align-items: center;
             justify-content: center;
             min-height: 400px;
-            cursor: pointer;
             opacity: 0.7;
-        }
-        .vitrine-vazia:hover {
-            opacity: 1;
-            background-color: rgba(90, 64, 51, 0.05);
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Banner Principal -->
+    <!-- ==========================================
+         CABEÇALHO / BANNER DA LOJA
+         ========================================== -->
     <header>
+        <!-- Dica: Insira o arquivo da imagem do seu banner principal em 'src' -->
         <img src="logo1.jpg" alt="Serena & Chic Banner">
     </header>
 
@@ -173,89 +180,65 @@
 
         <div class="vitrine-grid">
 
-            <!-- VITRINE 1: T-Shirt Lírio Desenhado -->
+            <!-- ==========================================
+                 VITRINE 1: T-Shirt Lírio Desenhado
+                 ========================================== -->
             <div class="vitrine">
                 <h2>T-Shirt Azul Marinho - Lírio</h2>
                 <div class="galeria-imagens">
+                    <!-- Substitua o nome dos arquivos em 'src' pelas suas fotos reais -->
                     <img src="t-shirt-feminina-azul-marinho-lirio-desenhado-2.webp" alt="T-Shirt Azul Marinho Lírio Foto 1">
                     <img src="t-shirt-feminina-azul-marinho-lirio-desenhado-3.webp" alt="T-Shirt Azul Marinho Lírio Foto 2">
-                    
-                    <!-- Espaço para adicionar mais fotos desta blusa -->
-                    <div class="espaco-nova-imagem">
-                        + Adicionar Foto
-                    </div>
                 </div>
-                <!-- INSIRA SEU LINK DE PAGAMENTO AQUI ONDE TEM O "#" -->
-                <a href="#" class="btn-comprar">Comprar Agora</a>
+                <!-- Substitua o '#' pelo seu link de pagamento/checkout -->
+                <a href="#" class="btn-comprar" target="_blank">Comprar Agora</a>
             </div>
 
-            <!-- VITRINE 2: T-Shirt Chocolate Rosa Vermelha -->
+            <!-- ==========================================
+                 VITRINE 2: T-Shirt Chocolate Rosa Vermelha
+                 ========================================== -->
             <div class="vitrine">
                 <h2>T-Shirt Chocolate - Rosa Vermelha</h2>
                 <div class="galeria-imagens">
                     <img src="t-shirt-feminina-chocolate-rosa-vermelha.webp" alt="T-Shirt Chocolate Rosa Foto 1">
                     <img src="t-shirt-feminina-chocolate-rosa-vermelha-1.webp" alt="T-Shirt Chocolate Rosa Foto 2">
-                    
-                    <!-- Espaço para adicionar mais fotos desta blusa -->
-                    <div class="espaco-nova-imagem">
-                        + Adicionar Foto
-                    </div>
                 </div>
-                <!-- INSIRA SEU LINK DE PAGAMENTO AQUI ONDE TEM O "#" -->
-                <a href="#" class="btn-comprar">Comprar Agora</a>
+                <a href="#" class="btn-comprar" target="_blank">Comprar Agora</a>
             </div>
 
-            <!-- VITRINE 3: T-Shirt Off Azul Royal -->
+            <!-- ==========================================
+                 VITRINE 3: T-Shirt Off Azul Royal
+                 ========================================== -->
             <div class="vitrine">
                 <h2>T-Shirt Off-White - Azul Royal</h2>
                 <div class="galeria-imagens">
                     <img src="t-shirt-feminina-off-azul-royal-1.webp" alt="T-Shirt Off-White Azul Royal Foto 1">
                     <img src="t-shirt-feminina-off-azul-royal-4.webp" alt="T-Shirt Off-White Azul Royal Foto 2">
-                    
-                    <!-- Espaço para adicionar mais fotos desta blusa -->
-                    <div class="espaco-nova-imagem">
-                        + Adicionar Foto
-                    </div>
                 </div>
-                <!-- INSIRA SEU LINK DE PAGAMENTO AQUI ONDE TEM O "#" -->
-                <a href="#" class="btn-comprar">Comprar Agora</a>
+                <a href="#" class="btn-comprar" target="_blank">Comprar Agora</a>
             </div>
 
-            <!-- VITRINE 4: T-Shirt Off Azul Turquesa -->
+            <!-- ==========================================
+                 VITRINE 4: T-Shirt Off Azul Turquesa
+                 ========================================== -->
             <div class="vitrine">
                 <h2>T-Shirt Off-White - Azul Turquesa</h2>
                 <div class="galeria-imagens">
                     <img src="t-shirt-feminina-off-azul-turquesa.webp" alt="T-Shirt Off-White Azul Turquesa Foto 1">
                     <img src="t-shirt-feminina-off-azul-turquesa-2.webp" alt="T-Shirt Off-White Azul Turquesa Foto 2">
-                    
-                    <!-- Espaço para adicionar mais fotos desta blusa -->
-                    <div class="espaco-nova-imagem">
-                        + Adicionar Foto
-                    </div>
                 </div>
-                <!-- INSIRA SEU LINK DE PAGAMENTO AQUI ONDE TEM O "#" -->
-                <a href="#" class="btn-comprar">Comprar Agora</a>
+                <a href="#" class="btn-comprar" target="_blank">Comprar Agora</a>
             </div>
 
-            <!-- VITRINE 5: T-Shirt Off Border Collie -->
+            <!-- ==========================================
+                 VITRINE 5: T-Shirt Off Border Collie
+                 ========================================== -->
             <div class="vitrine">
                 <h2>T-Shirt Off-White - Border Collie</h2>
                 <div class="galeria-imagens">
                     <img src="t-shirt-feminina-off-border-collie-1.webp" alt="T-Shirt Border Collie Foto 1">
-                    
-                    <!-- Espaço para adicionar mais fotos desta blusa -->
-                    <div class="espaco-nova-imagem">
-                        + Adicionar Foto
-                    </div>
                 </div>
-                <!-- INSIRA SEU LINK DE PAGAMENTO AQUI ONDE TEM O "#" -->
-                <a href="#" class="btn-comprar">Comprar Agora</a>
-            </div>
-
-            <!-- VITRINE EXTRA: Espaço reservado para nova blusa -->
-            <div class="vitrine vitrine-vazia">
-                <h2>+ Adicionar Nova Blusa (Vitrine)</h2>
-                <p>Copie e cole o código de uma vitrine acima para adicionar um novo modelo aqui.</p>
+                <a href="#" class="btn-comprar" target="_blank">Comprar Agora</a>
             </div>
 
         </div>
